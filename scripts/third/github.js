@@ -1,3 +1,5 @@
+// GitHub API
+// https://developer.github.com/v3/ 
 module.exports = function(idValue, secretValue) { 
   // github - http://developer.github.com/
   var config = {};

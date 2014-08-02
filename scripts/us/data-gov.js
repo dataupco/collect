@@ -1,3 +1,5 @@
+// Data.gov API
+// http://api.data.gov/docs/
 module.exports = function(keyValue) {
   var config = {};
   config.name='Data.gov';

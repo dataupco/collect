@@ -1,3 +1,5 @@
+// OpenColorado CKAN API
+// http://docs.ckan.org/en/latest/api/legacy-api.html
 module.exports = function(keyValue) {
   var config = {};
   config.name='Open Colorado';

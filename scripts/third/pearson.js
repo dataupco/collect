@@ -1,3 +1,5 @@
+// Pearson Content APIs
+// https://developer.pearson.com/apis/
 module.exports = function(keyValue) { 
   var config = {};
   config.enabled=true;

@@ -1,3 +1,5 @@
+// Fitbit API
+// https://wiki.fitbit.com/display/API/Fitbit+API
 module.exports = function(idValue, secretValue) {
   // fitbit - https://wiki.fitbit.com/display/API/Fitbit+API
   var config = {};

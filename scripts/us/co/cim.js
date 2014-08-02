@@ -1,3 +1,5 @@
+// Colorado Information Marketplace SODA API
+// http://dev.socrata.com/docs/endpoints.html
 module.exports = function(keyValue) { 
   var config = {};
   config.name='Colorado Information Marketplace';

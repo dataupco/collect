@@ -1,3 +1,5 @@
+// Twitter APIs
+// https://dev.twitter.com/docs/api/1.1 
 module.exports =  function(idValue, secretValue) {
   // twitter - https://dev.twitter.com/docs/api/1.1
   var config = {};
