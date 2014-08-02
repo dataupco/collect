@@ -93,6 +93,7 @@ Personal setup on the [**OpenShift**](https://www.openshift.com) PAAS
   1. Configure applications at data source provider as applicable
     * Creation applications to use
     * Provide callback url for Oauth 
+      * `https://<YOUR-APP>.rhcloud.com/auth/{dataSource}/callback`
   2. See passport-config.js for known source examples
     * Configure the ones you want
     * Remove the ones you don't want
