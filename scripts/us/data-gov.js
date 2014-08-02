@@ -3,9 +3,9 @@ module.exports = function(keyValue) {
   config.name='Data.gov';
   config.enabled=true;
   config.type='api-key';
-  config.baseUrl = 'http://catalog.data.gov/api'; 
-  config.keyName = 'Authorization'; 
+  config.baseUrl = 'https://api.data.gov'; 
+  config.keyName = 'api_key'; 
   config.keyValue = keyValue; 
-  config.isKeyInUrl = false; 
+  config.isKeyInUrl = true; 
   return config;
 };
