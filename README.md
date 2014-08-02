@@ -93,7 +93,13 @@ Personal setup on the [**OpenShift**](https://www.openshift.com) PAAS
   1. Configure applications at data source provider as applicable
     * Creation applications to use
     * Provide callback url for Oauth 
-  2. See examples in passport-config.js for each auth type
+  2. See passport-config.js for known source examples
+    * Configure the ones you want
+    * Remove the ones you don't want
+  3. Add other sources to passport-config.js
+    * Copy template from scripts/templates/*
+    * Configure as needed
+    * Declare in passport-config.js 
 
 ### Access Data Sources <a name="how-access"></a>
 
