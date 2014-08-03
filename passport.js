@@ -84,6 +84,10 @@ var apiDetails = function(apiId) {
   var authFlag = (hookFlag || apiConfig.type.match(/^oauth/))?true:false;
   var api = { 'id' : apiId, 'name' : apiName, 'authRequired' : authFlag, 'isWebhook' : hookFlag }; 
 
+  if(hookFlag && apiConfig.useApiKey===true) {
+    api.useApiKey = true;
+  }
+
   return api;
 };
 passportPlugin.apiDetails=apiDetails;
