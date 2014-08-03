@@ -530,7 +530,7 @@ var SampleApp = function() {
             else if(api.useApiKey===true) {
               var credentialParam = req.query.apikey;
               var hookUser = hook.login;
-              var credential = new Buffer(hookUser.name + ':' + hookUser.pass).toString('base64');
+              var credential = hookUser.name + hookUser.pass;
               if(!credentialParam || credential !== credentialParam) { 
                 res.send(401);
               }
@@ -582,7 +582,7 @@ var SampleApp = function() {
             if(api.useApiKey===true) {
               var credentialParam = req.query.apikey;
               var hookUser = hook.login;
-              var credential = new Buffer(hookUser.name + ':' + hookUser.pass).toString('base64');
+              var credential = hookUser.name + hookUser.pass;
               if(!credentialParam || credential !== credentialParam) { 
                 res.send(401);
                 return;
