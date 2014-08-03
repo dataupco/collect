@@ -8,6 +8,7 @@ appConfig.fitbit   = require('./scripts/apis/biz/fitbit.js')('KEY_GOES_HERE','PA
 appConfig.twitter  = require('./scripts/apis/biz/twitter.js')('KEY_GOES_HERE','PASS_GOES_HERE');
 appConfig.github   = require('./scripts/apis/biz/github.js')('KEY_GOES_HERE','PASS_GOES_HERE');
 appConfig.pearson  = require('./scripts/apis/biz/pearson.js')('KEY_GOES_HERE');
+appConfig.littlebits = require('./scripts/apis/biz/littlebits.js')('KEY_GOES_HERE'); // hack
 
 // Government APIs
 appConfig.datagov  = require('./scripts/apis/gov/usa/data-gov.js')('KEY_GOES_HERE');
@@ -19,6 +20,6 @@ appConfig.mashup1  = require('./scripts/apis/mash/template.js')();
 
 // Webhooks
 appConfig.webhook1 = require('./scripts/hooks/template.js')();
-appConfig.littlebits = require('./scripts/hooks/littlebits.js')();
+appConfig.littlebitsback = require('./scripts/hooks/littlebits.js')();
 
 module.exports = appConfig;
