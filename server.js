@@ -455,8 +455,8 @@ var SampleApp = function() {
             return;
           }
 
-          var username = crypto.randomBytes(16).toString('hex');
-          var password = crypto.randomBytes(16).toString('hex');
+          var username = crypto.randomBytes(8).toString('hex');
+          var password = crypto.randomBytes(8).toString('hex');
           var timestamp = new Date().getTime();
 
           var hook = {
