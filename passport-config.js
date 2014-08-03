@@ -19,5 +19,6 @@ appConfig.mashup1  = require('./scripts/apis/mash/template.js')();
 
 // Webhooks
 appConfig.webhook1 = require('./scripts/hooks/template.js')();
+appConfig.littlebits = require('./scripts/hooks/littlebits.js')();
 
 module.exports = appConfig;

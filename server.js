@@ -527,6 +527,17 @@ var SampleApp = function() {
             if(err || !hook) {
               res.send(404);
             }
+            else if(api.useApiKey===true) {
+              var credentialParam = req.query.apikey;
+              var hookUser = hook.login;
+              var credential = new Buffer(hookUser.name + ':' + hookUser.pass).toString('base64');
+              if(!credentialParam || credential !== credentialParam) { 
+                res.send(401);
+              }
+              else {
+                res.send(200);
+              }
+            }
             else {
               var authUser = basicauth(req);
               var hookUser = hook.login;
@@ -542,7 +553,7 @@ var SampleApp = function() {
           });
         };
 
-        // basic auth required
+        // basic auth required unless api specifies useApiKey
         self.routes.post['/hook/:apiName/:hookName'] = function(req,res,next) { 
 
           var apiName = req.param('apiName');
@@ -568,17 +579,27 @@ var SampleApp = function() {
               return;
             }
 
-            var authUser = basicauth(req);
-            var hookUser = hook.login;
-            if(!authUser || authUser.name !== hookUser.name 
-                         || authUser.pass !== hookUser.pass ) {
-              res.setHeader('WWW-Authenticate', 'Basic realm="'+apiName +' hook - '+hookName+'"');
-              res.send(401);
-              return;
+            if(api.useApiKey===true) {
+              var credentialParam = req.query.apikey;
+              var hookUser = hook.login;
+              var credential = new Buffer(hookUser.name + ':' + hookUser.pass).toString('base64');
+              if(!credentialParam || credential !== credentialParam) { 
+                res.send(401);
+                return;
+              }
             }
             else {
-              req.user = { 'id' : hook.user }; 
+              var authUser = basicauth(req);
+              var hookUser = hook.login;
+              if(!authUser || authUser.name !== hookUser.name 
+                           || authUser.pass !== hookUser.pass ) {
+                res.setHeader('WWW-Authenticate', 'Basic realm="'+apiName +' hook - '+hookName+'"');
+                res.send(401);
+                return;
+              }
             }
+
+            req.user = { 'id' : hook.user }; 
 
             var options = {};
             options.method = 'POST';
