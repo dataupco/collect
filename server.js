@@ -621,7 +621,7 @@ var SampleApp = function() {
     // https://www.openshift.com/kb/kb-e1044-how-to-redirect-traffic-to-https
     function redirectSec(req, res, next) {
       if (req.headers['x-forwarded-proto'] == 'http') { 
-        res.redirect('https://' + req.headers.host + req.uri);
+        res.redirect('https://' + req.headers.host + req.url);
       } else {
         return next();
       }
