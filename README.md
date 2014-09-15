@@ -62,7 +62,7 @@ Personal setup on the [**OpenShift**](https://www.openshift.com) PAAS
 
   5. Change references from proxy on dataupco to match your app and domain
   ~~~~~~~~~
-  vi lib/config/common-config.js // change db and host name
+  vi lib/config/common-config.js // change db, host name, and session secret
   git commit -am "changed proxy-dataupco references"
   ~~~~~~~~~
 

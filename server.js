@@ -172,7 +172,7 @@ var SampleApp = function() {
         self.app.configure(function() {
           self.app.use(express.bodyParser());
           self.app.use(express.cookieParser());
-          self.app.use(express.session({ secret: 'keep-this-private' }));
+          self.app.use(express.session({ secret: commonConfig.sessionSecret }));
           self.app.use(express.static(__dirname + '/public'));
 
           storage.init(self.app, self.db);
