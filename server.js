@@ -3,10 +3,10 @@
 var express = require('express');
 var fs      = require('fs');
 var mongodb = require('mongodb');
-var persona = require('./persona.js');
-var passport = require('./passport.js');
-var storage = require('./storage.js');
-var commonConfig = require('./common-config.js');
+var persona = require('./lib/persona.js');
+var passport = require('./lib/passport.js');
+var storage = require('./lib/storage.js');
+var commonConfig = require('./lib/config/common-config.js');
 
 
 /**
@@ -126,11 +126,11 @@ var SampleApp = function() {
             res.send(self.cache_get('index.html') );
         };
 
-        addRoutes(require('./routes/session.js'));
-        addRoutes(require('./routes/api.js'));
-        addRoutes(require('./routes/auth.js'));
-        addRoutes(require('./routes/data.js'));
-        addRoutes(require('./routes/hook.js'));
+        addRoutes(require('./lib/routes/session.js'));
+        addRoutes(require('./lib/routes/api.js'));
+        addRoutes(require('./lib/routes/auth.js'));
+        addRoutes(require('./lib/routes/data.js'));
+        addRoutes(require('./lib/routes/hook.js'));
 
     };
 

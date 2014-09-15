@@ -62,7 +62,7 @@ Personal setup on the [**OpenShift**](https://www.openshift.com) PAAS
 
   5. Change references from proxy on dataupco to match your app and domain
   ~~~~~~~~~
-  vi common-config.js // change db and host name
+  vi lib/config/common-config.js // change db and host name
   git commit -am "changed proxy-dataupco references"
   ~~~~~~~~~
 
@@ -74,12 +74,12 @@ Personal setup on the [**OpenShift**](https://www.openshift.com) PAAS
 
   7. Edit config of secret for encryption of credentials
   ~~~~~~~~~~~~~
-  vi storage-config.js
+  vi lib/config/storage-config.js
   ~~~~~~~~~~~~~
 
   8. Edit config and credentials for your data sources. See how [**here**](#how-configure).
   ~~~~~~~~~~~
-  vi passport-config.js
+  vi lib/config/passport-config.js
   git commit -am "Edited accounts. KEEP SECRET."
   ~~~~~~~~~~~
 
@@ -94,13 +94,13 @@ Personal setup on the [**OpenShift**](https://www.openshift.com) PAAS
     * Creation applications to use
     * Provide callback url for Oauth 
       * `https://<YOUR-APP>.rhcloud.com/auth/{dataSource}/callback`
-  2. See passport-config.js for known source examples
+  2. See lib/config/passport-config.js for known source examples
     * Configure the ones you want
     * Remove the ones you don't want
-  3. Add other sources to passport-config.js
+  3. Add other sources to lib/config/passport-config.js
     * Copy template from scripts/templates/*
     * Configure as needed
-    * Declare in passport-config.js 
+    * Declare in lib/config/passport-config.js 
 
 ### Access Data Sources <a name="how-access"></a>
 
